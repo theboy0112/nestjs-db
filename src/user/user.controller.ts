@@ -10,8 +10,11 @@ import {
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-//router
-@Controller('user')
+
+
+
+//router HTTP endpoints
+@Controller('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
@@ -22,11 +25,12 @@ export class UserController {
   }
   @Get()
   findAll() {
+    console.log("here")
     return this.userService.findAll();
   }
   @Get(':id')
   findOne(@Param('id') id: number) {
-    console.log('Nuumber', id);
+    console.log('Nuumber', id); 
     return this.userService.findOne(+id);
   }
   @Patch(':id')
@@ -35,7 +39,7 @@ export class UserController {
   }
   @Delete(':id')
   remove(@Param('id') id: string) {
-    console.log('Nuumber', id);
+    console.log('Number', id);
     return this.userService.remove(+id);
   }
 }

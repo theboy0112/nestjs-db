@@ -25,15 +25,16 @@ export class UserService {
     });
   }
   async update(id: number, updateUserDto: UpdateUserDto) {
-    return this.prisma.user.update({
-      where: {
-        id: id,
-      },
-      data: {
-        name: 'name',
-      },
-    });
-  }
+  return this.prisma.user.update({
+    where: {
+      id: id,
+    },
+    data: {
+      name: updateUserDto.name,     
+      email: updateUserDto.email,    
+    },
+  });
+}
   async remove(id: number) {
     return await this.prisma.user.delete({
       where: {

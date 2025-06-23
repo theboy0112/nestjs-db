@@ -9,6 +9,8 @@
     "target": "ES2023",
     "sourceMap": true,
     "outDir": "./dist",
+    "jsx": "react-jsx",
+"moduleResolution": "node",
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
